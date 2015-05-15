@@ -1,7 +1,3 @@
-//https://gir.me.uk/simple-node-js-tcp-proxy/
-/*jshint node:true*/
-'use strict';
- 
 var net = require('net');
  
 var proxyPort = 9020;
@@ -45,3 +41,12 @@ var server = net.createServer(function (socket) {
         console.log('Error: ' + err.soString());
     });
 });
+
+
+server.listen(tcpServerPort);
+proxy.listen(proxyPort);
+
+console.log('Server Listening on ' + tcpServerPort +', Proxy Listening on ' + proxyPort);
+
+// telnet localhost 9030
+// telnet localhost 9020
